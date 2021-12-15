@@ -1,9 +1,10 @@
 CC:=g++
 
-all: main.o Lexer.o
-	$(CC) -o main main.o Lexer.o
-dep: main.cpp src/Lexer.cpp
-	$(CC) -c -W main.cpp
-	$(CC) -c -W src/Lexer.cpp
+all: main.o Vector.o Trace.o
+	$(CC) -o main main.o Vector.o Trace.o
+dep: main.cpp src/Vector.cpp src/Trace.cpp
+	$(CC) -c -D__TRACE__ -W main.cpp
+	$(CC) -c -W src/Vector.cpp
+	$(CC) -c -W src/Trace.cpp
 clean:
 	rm *.o

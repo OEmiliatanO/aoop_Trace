@@ -15,7 +15,7 @@ public:
         {
              depth++;
              print_name("Entering");
-         }
+        }
 
     ~Trace()
         {
